@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aditya Mulay | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Aditya Mulay</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <div class="hero-content">
+      <img src="aditya.jpg" alt="Developer Image">
+      <h1>Hi, I'm <span>Aditya Mulay</span></h1>
+      <p>And I'm a <span class="typing-role" id="typing"></span></p>
+    </div>
+    <div class="social-icons">
+  <a href="https://github.com/adityamulay01" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/adityamulay01" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://www.hackerrank.com/adityamulay01" target="_blank" title="HackerRank">
+    <i class="fab fa-hackerrank"></i>
+  </a>
+</div>
+<a href="Adityamulayresume (1).pdf" class="btn-cv" download target="_blank">Download CV</a>
+
+
+  </section>
+
+  <section id="about" class="about-section">
+  <h2>About Me</h2>
+  <div class="about-content"><center>
+    <p>Hello! I'm <strong>Aditya Mulay</strong>, a passionate and dedicated Java Full Stack Developer based in Pune, Maharashtra.</p>
+    <p>I specialize in <strong>Java, Spring Boot, React, and SQL.</strong> With strong foundations in Core Java and front-end technologies, I aim to build efficient and user-friendly web applications.</p>
+    <p>One of my proudest achievements is helping <strong>Anatlaxmi Sales</strong>, a small-scale business in Aurangabad, go digital. I developed their full-stack solution, which boosted their customer engagement and sales.</p>
+    <p>I'm constantly learning and looking forward to building software that makes a real difference.</p></center>
+    <ul class="contact-info">
+      <li><strong><center>📱 Mobile:</strong> +91-7559229277</center></li>
+      <li><strong><center>📍 Location:</strong> Pune, Maharashtra, India</center></li>
+    </ul>
+  </div>
+</section>
+
+
+  <!-- Education Section -->
+<section id="education" class="section">
+  <h2>🎓 Education</h2>
+  <div class="education-card">
+    <h3>B.Tech in Information Technology</h3>
+    <p>MGMs Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, India</p>
+    <p class="edu-years">2020 – 2024</p>
+  </div>
+</section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>🚀 Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="anatlaxmi.jpg" alt="Project 1">
+        <h3>AnatLaxmi Sales (Live)</h3>
+        <p>Full Stack Web App</p>
+      </div>
+      <div class="project-card">
+        <img src="zerodha.png" alt="Project 2">
+        <h3>Zerodha Clone (Live)</h3>
+        <p>React + Spring Boot</p>
+      </div>
+      <div class="project-card">
+        <img src="java.png" alt="Project 3">
+        <h3>Java Reservation System</h3>
+        <p>Core Java Mini Project</p>
+      </div>
+      <div class="project-card">
+        <img src="sql.png" alt="Project 4">
+        <h3>Library Management</h3>
+        <p>SQL Database Project</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>🛠 Skills</h2>
+    <div class="skills-grid">
+      <span>Core Java</span>
+      <span>Spring Boot</span>
+      <span>React</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Bootstrap</span>
+      <span>SQL</span>
+      <span>Git & GitHub</span>
+      <span>MySQL</span>
+      <span>Eclipse</span>
+      <span>VSCode</span>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <h2>📬 Contact Me</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Aditya Mulay. All rights reserved.</p>
+  </footer>
+  <script>
+  const roles = [
+    "Java Developer",
+    "Full Stack Developer",
+    "React Frontend Developer",
+    "IT Engineer"
+  ];
+  let index = 0;
+  let charIndex = 0;
+  let currentRole = "";
+  let typingElement = document.getElementById("typing");
+
+  function type() {
+    if (charIndex < roles[index].length) {
+      currentRole += roles[index].charAt(charIndex);
+      typingElement.innerHTML = currentRole + '<span class="cursor">|</span>';
+      charIndex++;
+      setTimeout(type, 100);
+    } else {
+      setTimeout(erase, 1500);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      currentRole = currentRole.slice(0, -1);
+      typingElement.innerHTML = currentRole + '<span class="cursor">|</span>';
+      charIndex--;
+      setTimeout(erase, 50);
+    } else {
+      index = (index + 1) % roles.length;
+      setTimeout(type, 500);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(type, 1000);
+  });
+</script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  });
+
+  document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+  });
+</script>
+
+</body>
+</html>
